@@ -1,2 +1,2 @@
 # LibreriaCasaEsteban
-Aca hacemos el pyoyecto para practica 1
+Aca hacemos el proyecto para Practica 1
