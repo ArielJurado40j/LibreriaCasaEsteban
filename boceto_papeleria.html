@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Papelería - Boceto</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f7f7;
+      color: #222;
+    }
+
+    .page {
+      width: min(1280px, 94%);
+      margin: 22px auto;
+      background: white;
+      min-height: 900px;
+      border: 1px solid #ddd;
+      box-shadow: 0 4px 18px rgba(0,0,0,.06);
+    }
+
+    /* ENCABEZADO */
+    header {
+      height: 110px;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      padding: 0 45px;
+    }
+
+    .menu {
+      width: 34px;
+      height: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      cursor: pointer;
+    }
+
+    .menu span {
+      height: 3px;
+      width: 100%;
+      background: #333;
+      border-radius: 4px;
+    }
+
+    .search {
+      flex: 1;
+      max-width: 560px;
+      margin: 0 auto;
+      display: flex;
+      border: 1px solid #aaa;
+      border-radius: 7px;
+      overflow: hidden;
+      height: 48px;
+    }
+
+    .search input {
+      flex: 1;
+      border: 0;
+      outline: 0;
+      padding: 0 18px;
+      font-size: 16px;
+    }
+
+    .search button {
+      width: 55px;
+      border: 0;
+      background: white;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .icons {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      font-size: 27px;
+    }
+
+    .icon {
+      cursor: pointer;
+      position: relative;
+    }
+
+    /* HERO */
+    .hero {
+      margin: 30px auto 0;
+      width: 88%;
+      height: 300px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, #ececec, #fafafa);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero-content h1 {
+      font-size: 42px;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+
+    .hero-content p {
+      color: #666;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .hero-content button {
+      padding: 12px 28px;
+      border: 0;
+      border-radius: 6px;
+      background: #222;
+      color: white;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .dots {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 17px 0 28px;
+    }
+
+    .dots span {
+      width: 12px;
+      height: 12px;
+      border: 2px solid #777;
+      border-radius: 50%;
+    }
+
+    .dots span.active {
+      background: #444;
+    }
+
+    /* PRODUCTOS */
+    .products {
+      border-top: 1px solid #ddd;
+      padding: 28px 8% 45px;
+    }
+
+    .products h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 25px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 35px;
+    }
+
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      background: white;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 7px 20px rgba(0,0,0,.1);
+    }
+
+    .product-image {
+      height: 190px;
+      background: #eee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      font-size: 17px;
+    }
+
+    .card-info {
+      padding: 18px;
+      text-align: center;
+    }
+
+    .card-info h3 {
+      margin-bottom: 8px;
+    }
+
+    .price {
+      font-weight: bold;
+      font-size: 19px;
+      margin-bottom: 14px;
+    }
+
+    .card-info button {
+      border: 0;
+      background: #222;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* WHATSAPP */
+    .whatsapp {
+      position: fixed;
+      right: 28px;
+      bottom: 25px;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: #25d366;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 31px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,.25);
+    }
+
+    footer {
+      height: 70px;
+      border-top: 1px solid #ddd;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #777;
+      font-size: 14px;
+    }
+
+    @media (max-width: 750px) {
+      header {
+        padding: 0 18px;
+        gap: 14px;
+      }
+
+      .icons { gap: 12px; font-size: 22px; }
+      .hero { height: 240px; width: 92%; }
+      .hero-content h1 { font-size: 30px; }
+      .cards { grid-template-columns: 1fr; }
+      .products { padding-left: 6%; padding-right: 6%; }
+      .search { max-width: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <header>
+      <div class="menu" title="Menú">
+        <span></span><span></span><span></span>
+      </div>
+
+      <div class="search">
+        <input type="text" placeholder="Buscar productos...">
+        <button aria-label="Buscar">⌕</button>
+      </div>
+
+      <div class="icons">
+        <div class="icon" title="Mi cuenta">♙</div>
+        <div class="icon" title="Carrito">🛒</div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <h1>PAPELERÍA</h1>
+          <p>Todo lo que necesitás para estudiar, crear y organizarte.</p>
+          <button>Ver productos</button>
+        </div>
+      </section>
+
+      <div class="dots" aria-label="Selector del carrusel">
+        <span class="active"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <section class="products">
+        <h2>Productos destacados</h2>
+
+        <div class="cards">
+          <article class="card">
+            <div class="product-image">IMAGEN DEL PRODUCTO</div>
+            <div class="card-info">
+              <h3>Cuadernos</h3>
+              <p class="price">$5.000</p>
+              <button>Ver producto</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="product-image">IMAGEN DEL PRODUCTO</div>
+            <div class="card-info">
+              <h3>Útiles escolares</h3>
+              <p class="price">$3.500</p>
+              <button>Ver producto</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="product-image">IMAGEN DEL PRODUCTO</div>
+            <div class="card-info">
+              <h3>Oficina</h3>
+              <p class="price">$4.200</p>
+              <button>Ver producto</button>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Boceto de página web · Papelería
+    </footer>
+  </div>
+
+  <a class="whatsapp" href="#" title="WhatsApp">☎</a>
+</body>
+</html>
