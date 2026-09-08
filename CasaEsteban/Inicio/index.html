@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tienda online moderna y responsive.">
+    <title>Casa Esteban | Tienda</title>
+    <link rel="stylesheet" href="css/estilo-inicio.css">
+</head>
+<body>
+
+    <!-- Barra superior -->
+    <div class="barra-superior">
+        <div class="contenedor barra-superior-contenido">
+            <span>Envíos y atención personalizada</span>
+            <div class="barra-enlaces">
+                <a href="../Usuario/Login/login.html">Iniciar sesion</a>
+                <a href="../Usuario/Registrar_cliente/registro.html">Registrarse</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Encabezado -->
+    <header class="encabezado">
+        <div class="contenedor encabezado-contenido">
+            <button class="boton-menu-movil" id="botonMenuMovil" aria-label="Abrir menú">☰</button>
+
+            <a href="#" class="logo">
+                <img src="img-inicio/logo-inicio.png" alt="Casa Esteban" class="logo-icono">
+
+            </a>
+
+            <form class="buscador" id="formularioBusqueda">
+            <!-- <select id="selectorBusqueda" aria-label="Categoría de búsqueda">
+                    <option value="todos">Todas las categorías</option>
+                    <option value="libreria">Librería</option>
+                    <option value="escolar">Escolar</option>
+                    <option value="arte">Arte y dibujo</option>
+                    <option value="oficina">Oficina</option>
+                    <option value="regaleria">Regalería</option>
+                </select>-->
+                <input type="search" id="entradaBusqueda" placeholder="¿Qué estás buscando?" autocomplete="off">
+                <button type="submit" aria-label="Buscar">⌕</button>
+            </form> 
+
+            <div class="acciones-encabezado">
+                <button class="accion-encabezado" id="botonFavoritos" aria-label="Favoritos">
+                    <span>♡</span>
+                    <b id="contadorFavoritos">0</b>
+                </button>
+                <button class="accion-encabezado" id="botonCarrito" aria-label="Carrito">
+                    <span>🛒</span>
+                    <b id="contadorCarrito">0</b>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navegación -->
+    <nav class="navegacion" id="navegacion">
+        <div class="contenedor navegacion-contenido">
+            <div class="menu-categorias">
+                <button class="boton-categorias" id="botonCategorias">☰ &nbsp; Comprar por categoría</button>
+                <div class="menu-desplegable menu-categorias-desplegable" id="menuCategorias">
+                    <a href="#catalogo" data-categoria="libreria">Librería <span>›</span></a>
+                    <a href="#catalogo" data-categoria="escolar">Escolar <span>›</span></a>
+                    <a href="#catalogo" data-categoria="arte">Arte y dibujo <span>›</span></a>
+                    <a href="#catalogo" data-categoria="oficina">Oficina <span>›</span></a>
+                    <a href="#catalogo" data-categoria="regaleria">Regalería <span>›</span></a>
+                    <a href="#catalogo" data-categoria="todos">Ver todos los productos <span>›</span></a>
+                </div>
+            </div>
+
+            <div class="enlaces-navegacion">
+                <a href="#ofertas">Ofertas</a>
+
+                <div class="item-menu">
+                    <button class="boton-menu">Librería <span>⌄</span></button>
+                    <div class="menu-desplegable">
+                        <a href="#catalogo">Productos 1</a>
+                        <a href="#catalogo">Productos 2</a>
+                        <a href="#catalogo">Productos 3</a>
+                        <a href="#catalogo">Productos 4</a>
+                    </div>
+                </div>
+
+                <div class="item-menu">
+                    <button class="boton-menu">Escolar <span>⌄</span></button>
+                    <div class="menu-desplegable">
+                        <a href="#catalogo">Productos 1</a>
+                        <a href="#catalogo">Productos 2</a>
+                        <a href="#catalogo">Productos 3</a>
+                        <a href="#catalogo">Productos 4</a>
+                    </div>
+                </div>
+
+                <div class="item-menu">
+                    <button class="boton-menu">Arte y dibujo <span>⌄</span></button>
+                    <div class="menu-desplegable">
+                        <a href="#catalogo">Productos 1</a>
+                        <a href="#catalogo">Productos 2</a>
+                        <a href="#catalogo">Productos 3</a>
+                        <a href="#catalogo">Productos 4</a>
+                    </div>
+                </div>
+
+                <div class="item-menu">
+                    <button class="boton-menu">Oficina <span>⌄</span></button>
+                    <div class="menu-desplegable">
+                        <a href="#catalogo">Productos 1</a>
+                        <a href="#catalogo">Productos 2</a>
+                        <a href="#catalogo">Productos 3</a>
+                        <a href="#catalogo">Productos 4</a>
+                    </div>
+                </div>
+
+                <div class="item-menu">
+                    <button class="boton-menu">Más <span>⌄</span></button>
+                    <div class="menu-desplegable">
+                        <a href="#novedades">Productos 1</a>
+                        <a href="#novedades">Productos 2</a>
+                        <a href="#novedades">Productos 3</a>
+                        <a href="#contacto">Contacto</a>
+                    </div>
+                </div>
+            </div>
+
+            <a class="enlace-visto" href="#novedades">◷ &nbsp; Vistos recientemente</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <div class="contenedor">
+                <div class="carrusel" id="carrusel">
+                    <article class="diapositiva activa">
+                        <div class="hero-texto">
+                            <span class="etiqueta">Novedades</span>
+                            <h1>Todo lo que necesitás,<br><strong>en un solo lugar.</strong></h1>
+                            <p>Encontrá productos para estudiar, crear, trabajar y regalar.</p>
+                            <a class="boton-principal" href="#catalogo">Comprar ahora <span>→</span></a>
+                        </div>
+                        <div class="hero-imagen">
+                            <img src="img-inicio/descartables.jpg" alt="Producto destacado">
+                            <div class="burbuja burbuja-menta">Nuevos</div>
+                        </div>
+                    </article>
+
+                    <article class="diapositiva">
+                        <div class="hero-texto">
+                            <span class="etiqueta etiqueta-magenta">Oferta especial</span>
+                            <h1>Ideas para volver a<br><strong>crear y estudiar.</strong></h1>
+                            <p>Seleccionados con precios especiales por tiempo limitado.</p>
+                            <a class="boton-principal boton-magenta" href="#ofertas">Ver ofertas <span>→</span></a>
+                        </div>
+                        <div class="hero-imagen">
+                            <img src="img-inicio/libreria.jpg" alt="Productos en oferta">
+                            <div class="burbuja burbuja-amarilla">-20%</div>
+                        </div>
+                    </article>
+
+                    <article class="diapositiva">
+                        <div class="hero-texto">
+                            <span class="etiqueta etiqueta-amarilla">Para vos</span>
+                            <h1>Elegí tus favoritos<br><strong>y armá tu pedido.</strong></h1>
+                            <p>Guardá productos, sumalos al carrito y consultanos por WhatsApp.</p>
+                            <a class="boton-principal boton-menta" href="#catalogo">Explorar catálogo <span>→</span></a>
+                        </div>
+                        <div class="hero-imagen">
+                            <img src="img-inicio/libre2.jpg" alt="Catálogo de productos">
+                            <div class="burbuja burbuja-magenta">Favoritos</div>
+                        </div>
+                    </article>
+
+                    <button class="control-carrusel anterior" id="anterior" aria-label="Anterior">‹</button>
+                    <button class="control-carrusel siguiente" id="siguiente" aria-label="Siguiente">›</button>
+                    <div class="indicadores" id="indicadores"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categorías -->
+        <section class="seccion categorias" id="categorias">
+            <div class="contenedor">
+                <div class="cabecera-seccion">
+                    <div>
+                        <span class="mini-etiqueta">Explorá</span>
+                        <h2>Comprar por categoría</h2>
+                    </div>
+                    <button class="enlace-seccion" data-filtrar="todos">Ver todas →</button>
+                </div>
+
+                <div class="rejilla-categorias">
+                    <button class="tarjeta-categoria" data-filtrar="libreria">
+                        <span class="icono-categoria">📚</span>
+                        <strong>Librería</strong>
+                        <small>Productos 1</small>
+                    </button>
+                    <button class="tarjeta-categoria" data-filtrar="escolar">
+                        <span class="icono-categoria">✏️</span>
+                        <strong>Escolar</strong>
+                        <small>Productos 2</small>
+                    </button>
+                    <button class="tarjeta-categoria" data-filtrar="arte">
+                        <span class="icono-categoria">🎨</span>
+                        <strong>Arte y dibujo</strong>
+                        <small>Productos 3</small>
+                    </button>
+                    <button class="tarjeta-categoria" data-filtrar="oficina">
+                        <span class="icono-categoria">🗂️</span>
+                        <strong>Oficina</strong>
+                        <small>Productos 4</small>
+                    </button>
+                    <button class="tarjeta-categoria" data-filtrar="regaleria">
+                        <span class="icono-categoria">🎁</span>
+                        <strong>Regalería</strong>
+                        <small>Productos 5</small>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ofertas -->
+        <section class="seccion fondo-suave" id="ofertas">
+            <div class="contenedor">
+                <div class="cabecera-seccion">
+                    <div>
+                        <span class="mini-etiqueta">Elegidos para vos</span>
+                        <h2>Más vendidos</h2>
+                    </div>
+                    <div class="controles-seccion">
+                        <button class="flecha-seccion" id="desplazarAnterior" aria-label="Anterior">←</button>
+                        <button class="flecha-seccion" id="desplazarSiguiente" aria-label="Siguiente">→</button>
+                    </div>
+                </div>
+
+                <div class="rejilla-productos carrusel-productos" id="listaMasVendidos">
+                    <!-- Se completa con JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Catálogo -->
+        <section class="seccion" id="catalogo">
+            <div class="contenedor">
+                <div class="cabecera-seccion cabecera-catalogo">
+                    <div>
+                        <span class="mini-etiqueta">Nuestro catálogo</span>
+                        <h2>Productos destacados</h2>
+                    </div>
+
+                    <div class="filtros-catalogo">
+                        <button class="filtro activo" data-filtro="todos">Todos</button>
+                        <button class="filtro" data-filtro="libreria">Librería</button>
+                        <button class="filtro" data-filtro="escolar">Escolar</button>
+                        <button class="filtro" data-filtro="arte">Arte y dibujo</button>
+                        <button class="filtro" data-filtro="oficina">Oficina</button>
+                        <button class="filtro" data-filtro="regaleria">Regalería</button>
+                    </div>
+                </div>
+
+                <div class="rejilla-productos" id="listaProductos">
+                    <!-- Se completa con JavaScript -->
+                </div>
+
+                <div class="sin-resultados" id="sinResultados">
+                    <span>🔎</span>
+                    <h3>No encontramos productos</h3>
+                    <p>Probá con otra búsqueda o categoría.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beneficios -->
+        <section class="seccion beneficios">
+            <div class="contenedor rejilla-beneficios">
+                <div class="beneficio">
+                    <span>🚚</span>
+                    <div><strong>Envíos</strong><small>Consultá zonas disponibles</small></div>
+                </div>
+                <div class="beneficio">
+                    <span>💬</span>
+                    <div><strong>Atención personalizada</strong><small>Estamos para ayudarte</small></div>
+                </div>
+                <div class="beneficio">
+                    <span>🔒</span>
+                    <div><strong>Compra segura</strong><small>Tus datos protegidos</small></div>
+                </div>
+                <div class="beneficio">
+                    <span>🎁</span>
+                    <div><strong>Productos seleccionados</strong><small>Para cada necesidad</small></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Novedades -->
+        <section class="seccion fondo-gradiente" id="novedades">
+            <div class="contenedor">
+                <div class="banner-newsletter">
+                    <div>
+                        <span class="mini-etiqueta mini-etiqueta-oscura">Comunidad</span>
+                        <h2>Enterate de las novedades</h2>
+                        <p>Recibí ofertas, lanzamientos y recomendaciones directamente en tu correo.</p>
+                    </div>
+                    <form class="formulario-newsletter" id="formularioNewsletter">
+                        <input type="email" id="correoNewsletter" placeholder="Tu correo electrónico" required>
+                        <button type="submit" class="boton-principal">Suscribirme</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie -->
+    <footer class="pie" id="contacto">
+        <div class="contenedor pie-grid">
+            <div class="pie-marca">
+                <a href="#" class="logo logo-pie">
+                    <span class="logo-icono">CE</span>
+                    <span><strong>Casa Esteban</strong><small>tienda online</small></span>
+                </a>
+                <p>Un espacio para estudiar, crear, trabajar y encontrar eso que estabas buscando.</p>
+            </div>
+
+            <div class="pie-columna">
+                <h3>Catálogo</h3>
+                <a href="#catalogo" data-filtro-pie="libreria">Librería</a>
+                <a href="#catalogo" data-filtro-pie="escolar">Escolar</a>
+                <a href="#catalogo" data-filtro-pie="arte">Arte y dibujo</a>
+                <a href="#catalogo" data-filtro-pie="oficina">Oficina</a>
+            </div>
+
+            <div class="pie-columna">
+                <h3>Ayuda</h3>
+                <a href="#contacto">Preguntas frecuentes</a>
+                <a href="#contacto">Envíos</a>
+                <a href="#contacto">Medios de pago</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+
+            <div class="pie-columna">
+                <h3>Seguinos</h3>
+                <div class="redes">
+                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="TikTok">TT</a>
+                </div>
+                <p class="horarios">Lunes a viernes<br>07:30–13:00 · 17:30–21:00</p>
+            </div>
+        </div>
+        <div class="pie-final">
+            <div class="contenedor">
+                <span>© 2026 Casa Esteban. Todos los derechos reservados.</span>
+                <span>Diseño responsive</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Panel lateral del carrito -->
+    <div class="fondo-panel" id="fondoPanel"></div>
+    <aside class="panel-carrito" id="panelCarrito" aria-label="Carrito de compras">
+        <div class="cabecera-panel">
+            <div>
+                <span class="mini-etiqueta">Tu pedido</span>
+                <h2>Carrito</h2>
+            </div>
+            <button class="cerrar-panel" id="cerrarCarrito" aria-label="Cerrar carrito">×</button>
+        </div>
+
+        <div class="contenido-carrito" id="contenidoCarrito">
+            <div class="carrito-vacio">
+                <span>🛒</span>
+                <h3>Tu carrito está vacío</h3>
+                <p>Agregá productos para comenzar tu pedido.</p>
+            </div>
+        </div>
+
+        <div class="pie-carrito">
+            <div class="fila-total"><span>Subtotal</span><strong id="subtotalCarrito">$0</strong></div>
+            <p>El envío y otros costos se calculan al confirmar.</p>
+            <button class="boton-principal boton-completo" id="botonFinalizar">Finalizar pedido</button>
+        </div>
+    </aside>
+
+    <!-- Modal de producto -->
+    <div class="modal-fondo" id="modalProducto">
+        <div class="modal">
+            <button class="cerrar-modal" id="cerrarModal" aria-label="Cerrar">×</button>
+            <div class="modal-grid">
+                <img src="imagen.jpg" alt="Producto" id="modalImagen">
+                <div>
+                    <span class="mini-etiqueta" id="modalCategoria">Categoría</span>
+                    <h2 id="modalNombre">Producto</h2>
+                    <p id="modalDescripcion">Descripción del producto.</p>
+                    <strong class="precio-modal" id="modalPrecio">$0</strong>
+                    <button class="boton-principal boton-completo" id="modalAgregar">Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp -->
+    <a class="boton-whatsapp" href="https://wa.me/5490000000000?text=Hola%20Casa%20Esteban%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+        <img src="img-inicio/whatsapp.png" alt="WhatsApp">
+        <small>¿Necesitás ayuda?</small>
+    </a>
+
+    <div class="aviso" id="aviso"></div>
+
+    <script>
+        const productos = [
+            {id:1, nombre:"Producto 1", categoria:"libreria", precio:1850, imagen:"imagen.jpg", descripcion:"Producto destacado de librería para uso diario."},
+            {id:2, nombre:"Producto 2", categoria:"escolar", precio:2400, imagen:"imagen.jpg", descripcion:"Una opción práctica para acompañar tus estudios."},
+            {id:3, nombre:"Producto 3", categoria:"arte", precio:3200, imagen:"imagen.jpg", descripcion:"Ideal para proyectos creativos y trabajos artísticos."},
+            {id:4, nombre:"Producto 4", categoria:"oficina", precio:2750, imagen:"imagen.jpg", descripcion:"Organizá tu espacio de trabajo de forma simple."},
+            {id:5, nombre:"Producto 5", categoria:"regaleria", precio:4100, imagen:"imagen.jpg", descripcion:"Una propuesta especial para regalar o regalarte."},
+            {id:6, nombre:"Producto 6", categoria:"libreria", precio:1950, imagen:"imagen.jpg", descripcion:"Producto versátil para tu escritorio."},
+            {id:7, nombre:"Producto 7", categoria:"escolar", precio:3500, imagen:"imagen.jpg", descripcion:"Pensado para acompañarte durante todo el ciclo escolar."},
+            {id:8, nombre:"Producto 8", categoria:"arte", precio:4600, imagen:"imagen.jpg", descripcion:"Para explorar ideas y darle vida a tus proyectos."},
+            {id:9, nombre:"Producto 9", categoria:"oficina", precio:2900, imagen:"imagen.jpg", descripcion:"Orden y practicidad para tu oficina."},
+            {id:10, nombre:"Producto 10", categoria:"regaleria", precio:5200, imagen:"imagen.jpg", descripcion:"Un detalle diferente para una ocasión especial."},
+            {id:11, nombre:"Producto 11", categoria:"libreria", precio:2250, imagen:"imagen.jpg", descripcion:"Una alternativa funcional para todos los días."},
+            {id:12, nombre:"Producto 12", categoria:"escolar", precio:2800, imagen:"imagen.jpg", descripcion:"Todo listo para acompañar tus tareas."}
+        ];
+
+        let carrito = JSON.parse(localStorage.getItem("carritoCasaEsteban")) || [];
+        let favoritos = JSON.parse(localStorage.getItem("favoritosCasaEsteban")) || [];
+        let filtroActual = "todos";
+        let busquedaActual = "";
+        let categoriaBusqueda = "todos";
+        let productoModalActual = null;
+
+        const formatoPrecio = valor => "$" + valor.toLocaleString("es-AR");
+
+        function guardarEstado() {
+            localStorage.setItem("carritoCasaEsteban", JSON.stringify(carrito));
+            localStorage.setItem("favoritosCasaEsteban", JSON.stringify(favoritos));
+        }
+
+        function crearTarjetaProducto(producto) {
+            const esFavorito = favoritos.includes(producto.id);
+            const cantidad = carrito.find(item => item.id === producto.id)?.cantidad || 0;
+
+            return `
+                <article class="tarjeta-producto" data-id="${producto.id}">
+                    <div class="producto-imagen">
+                        <img src="${producto.imagen}" alt="${producto.nombre}" loading="lazy">
+                        <button class="boton-favorito ${esFavorito ? "seleccionado" : ""}" data-favorito="${producto.id}" aria-label="Agregar ${producto.nombre} a favoritos">
+                            ${esFavorito ? "♥" : "♡"}
+                        </button>
+                        ${cantidad ? `<span class="cantidad-en-carrito">${cantidad} en carrito</span>` : ""}
+                    </div>
+                    <div class="producto-contenido">
+                        <span class="producto-categoria">${producto.categoria.replace("regaleria","Regalería").replace("libreria","Librería").replace("escolar","Escolar").replace("arte","Arte y dibujo").replace("oficina","Oficina")}</span>
+                        <h3>${producto.nombre}</h3>
+                        <p>${producto.descripcion}</p>
+                        <div class="producto-pie">
+                            <strong>${formatoPrecio(producto.precio)}</strong>
+                            <button class="boton-agregar" data-agregar="${producto.id}" aria-label="Agregar al carrito">+</button>
+                        </div>
+                        <button class="boton-ver" data-ver="${producto.id}">Ver producto</button>
+                    </div>
+                </article>
+            `;
+        }
+
+        function productosFiltrados() {
+            return productos.filter(producto => {
+                const coincideCategoria = filtroActual === "todos" || producto.categoria === filtroActual;
+                const coincideBusqueda = !busquedaActual ||
+                    producto.nombre.toLowerCase().includes(busquedaActual) ||
+                    producto.descripcion.toLowerCase().includes(busquedaActual);
+                const coincideCategoriaBusqueda = categoriaBusqueda === "todos" || producto.categoria === categoriaBusqueda;
+                return coincideCategoria && coincideBusqueda && coincideCategoriaBusqueda;
+            });
+        }
+
+        function renderProductos() {
+            const lista = document.getElementById("listaProductos");
+            const resultados = productosFiltrados();
+
+            lista.innerHTML = resultados.map(crearTarjetaProducto).join("");
+            document.getElementById("sinResultados").classList.toggle("visible", resultados.length === 0);
+            actualizarFiltros();
+            conectarEventosProductos();
+        }
+
+        function renderMasVendidos() {
+            const lista = document.getElementById("listaMasVendidos");
+            lista.innerHTML = productos.slice(0, 6).map(crearTarjetaProducto).join("");
+            conectarEventosProductos();
+        }
+
+        function conectarEventosProductos() {
+            document.querySelectorAll("[data-favorito]").forEach(boton => {
+                boton.addEventListener("click", evento => {
+                    evento.stopPropagation();
+                    const id = Number(boton.dataset.favorito);
+                    if (favoritos.includes(id)) {
+                        favoritos = favoritos.filter(item => item !== id);
+                        mostrarAviso("Producto quitado de favoritos");
+                    } else {
+                        favoritos.push(id);
+                        mostrarAviso("Producto agregado a favoritos ♥");
+                    }
+                    guardarEstado();
+                    actualizarContadores();
+                    renderProductos();
+                    renderMasVendidos();
+                });
+            });
+
+            document.querySelectorAll("[data-agregar]").forEach(boton => {
+                boton.addEventListener("click", evento => {
+                    evento.stopPropagation();
+                    agregarAlCarrito(Number(boton.dataset.agregar));
+                });
+            });
+
+            document.querySelectorAll("[data-ver]").forEach(boton => {
+                boton.addEventListener("click", () => abrirModal(Number(boton.dataset.ver)));
+            });
+        }
+
+        function actualizarFiltros() {
+            document.querySelectorAll(".filtro").forEach(boton => {
+                boton.classList.toggle("activo", boton.dataset.filtro === filtroActual);
+            });
+        }
+
+        function aplicarFiltro(filtro) {
+            filtroActual = filtro;
+            renderProductos();
+            document.getElementById("catalogo").scrollIntoView({behavior:"smooth", block:"start"});
+        }
+
+        function agregarAlCarrito(id) {
+            const producto = productos.find(item => item.id === id);
+            if (!producto) return;
+
+            const existente = carrito.find(item => item.id === id);
+            if (existente) {
+                existente.cantidad++;
+            } else {
+                carrito.push({id, cantidad:1});
+            }
+
+            guardarEstado();
+            actualizarContadores();
+            renderCarrito();
+            mostrarAviso(`${producto.nombre} agregado al carrito`);
+        }
+
+        function cambiarCantidad(id, cambio) {
+            const item = carrito.find(producto => producto.id === id);
+            if (!item) return;
+
+            item.cantidad += cambio;
+            if (item.cantidad <= 0) {
+                carrito = carrito.filter(producto => producto.id !== id);
+            }
+
+            guardarEstado();
+            actualizarContadores();
+            renderCarrito();
+            renderProductos();
+            renderMasVendidos();
+        }
+
+        function actualizarContadores() {
+            const total = carrito.reduce((suma, item) => suma + item.cantidad, 0);
+            document.getElementById("contadorCarrito").textContent = total;
+            document.getElementById("contadorFavoritos").textContent = favoritos.length;
+        }
+
+        function renderCarrito() {
+            const contenedor = document.getElementById("contenidoCarrito");
+            const subtotal = carrito.reduce((suma, item) => {
+                const producto = productos.find(p => p.id === item.id);
+                return suma + (producto ? producto.precio * item.cantidad : 0);
+            }, 0);
+
+            document.getElementById("subtotalCarrito").textContent = formatoPrecio(subtotal);
+
+            if (!carrito.length) {
+                contenedor.innerHTML = `
+                    <div class="carrito-vacio">
+                        <span>🛒</span>
+                        <h3>Tu carrito está vacío</h3>
+                        <p>Agregá productos para comenzar tu pedido.</p>
+                    </div>`;
+                return;
+            }
+
+            contenedor.innerHTML = carrito.map(item => {
+                const producto = productos.find(p => p.id === item.id);
+                return `
+                    <div class="item-carrito">
+                        <img src="${producto.imagen}" alt="${producto.nombre}">
+                        <div class="item-carrito-info">
+                            <strong>${producto.nombre}</strong>
+                            <span>${formatoPrecio(producto.precio)}</span>
+                            <div class="control-cantidad">
+                                <button data-cambiar="${producto.id}" data-cambio="-1">−</button>
+                                <b>${item.cantidad}</b>
+                                <button data-cambiar="${producto.id}" data-cambio="1">+</button>
+                            </div>
+                        </div>
+                        <button class="eliminar-item" data-eliminar="${producto.id}" aria-label="Eliminar">×</button>
+                    </div>`;
+            }).join("");
+
+            document.querySelectorAll("[data-cambiar]").forEach(boton => {
+                boton.addEventListener("click", () => cambiarCantidad(Number(boton.dataset.cambiar), Number(boton.dataset.cambio)));
+            });
+
+            document.querySelectorAll("[data-eliminar]").forEach(boton => {
+                boton.addEventListener("click", () => {
+                    carrito = carrito.filter(item => item.id !== Number(boton.dataset.eliminar));
+                    guardarEstado();
+                    actualizarContadores();
+                    renderCarrito();
+                    renderProductos();
+                    renderMasVendidos();
+                });
+            });
+        }
+
+        function abrirCarrito() {
+            document.getElementById("panelCarrito").classList.add("abierto");
+            document.getElementById("fondoPanel").classList.add("visible");
+            document.body.classList.add("sin-scroll");
+        }
+
+        function cerrarCarrito() {
+            document.getElementById("panelCarrito").classList.remove("abierto");
+            document.getElementById("fondoPanel").classList.remove("visible");
+            document.body.classList.remove("sin-scroll");
+        }
+
+        function abrirModal(id) {
+            const producto = productos.find(item => item.id === id);
+            if (!producto) return;
+
+            productoModalActual = id;
+            document.getElementById("modalImagen").src = producto.imagen;
+            document.getElementById("modalImagen").alt = producto.nombre;
+            document.getElementById("modalCategoria").textContent = producto.categoria;
+            document.getElementById("modalNombre").textContent = producto.nombre;
+            document.getElementById("modalDescripcion").textContent = producto.descripcion;
+            document.getElementById("modalPrecio").textContent = formatoPrecio(producto.precio);
+            document.getElementById("modalProducto").classList.add("visible");
+            document.body.classList.add("sin-scroll");
+        }
+
+        function cerrarModal() {
+            document.getElementById("modalProducto").classList.remove("visible");
+            document.body.classList.remove("sin-scroll");
+        }
+
+        function mostrarAviso(mensaje) {
+            const aviso = document.getElementById("aviso");
+            aviso.textContent = mensaje;
+            aviso.classList.add("visible");
+            clearTimeout(window.temporizadorAviso);
+            window.temporizadorAviso = setTimeout(() => aviso.classList.remove("visible"), 2400);
+        }
+
+        // Menú de categorías
+        document.getElementById("botonCategorias").addEventListener("click", () => {
+            document.getElementById("menuCategorias").classList.toggle("visible");
+        });
+
+        document.querySelectorAll(".menu-categorias-desplegable a").forEach(enlace => {
+            enlace.addEventListener("click", () => {
+                aplicarFiltro(enlace.dataset.categoria);
+                document.getElementById("menuCategorias").classList.remove("visible");
+            });
+        });
+
+        // Menús desplegables
+        document.querySelectorAll(".boton-menu").forEach(boton => {
+            boton.addEventListener("click", evento => {
+                evento.stopPropagation();
+                const menu = boton.nextElementSibling;
+                document.querySelectorAll(".item-menu .menu-desplegable.visible").forEach(abierto => {
+                    if (abierto !== menu) abierto.classList.remove("visible");
+                });
+                menu.classList.toggle("visible");
+            });
+        });
+
+        document.addEventListener("click", () => {
+            document.querySelectorAll(".menu-desplegable.visible").forEach(menu => menu.classList.remove("visible"));
+        });
+
+        // Filtros
+        document.querySelectorAll(".filtro").forEach(boton => {
+            boton.addEventListener("click", () => aplicarFiltro(boton.dataset.filtro));
+        });
+
+        document.querySelectorAll("[data-filtrar]").forEach(boton => {
+            boton.addEventListener("click", () => aplicarFiltro(boton.dataset.filtrar));
+        });
+
+        document.querySelectorAll("[data-filtro-pie]").forEach(enlace => {
+            enlace.addEventListener("click", () => {
+                setTimeout(() => aplicarFiltro(enlace.dataset.filtroPie), 100);
+            });
+        });
+
+        // Búsqueda
+        document.getElementById("formularioBusqueda").addEventListener("submit", evento => {
+            evento.preventDefault();
+            busquedaActual = document.getElementById("entradaBusqueda").value.trim().toLowerCase();
+            categoriaBusqueda = document.getElementById("selectorBusqueda").value;
+            renderProductos();
+            document.getElementById("catalogo").scrollIntoView({behavior:"smooth"});
+        });
+
+        document.getElementById("entradaBusqueda").addEventListener("input", evento => {
+            busquedaActual = evento.target.value.trim().toLowerCase();
+            renderProductos();
+        });
+
+        // Carrito
+        document.getElementById("botonCarrito").addEventListener("click", abrirCarrito);
+        document.getElementById("cerrarCarrito").addEventListener("click", cerrarCarrito);
+        document.getElementById("fondoPanel").addEventListener("click", cerrarCarrito);
+
+        document.getElementById("botonFinalizar").addEventListener("click", () => {
+            if (!carrito.length) {
+                mostrarAviso("Agregá al menos un producto al carrito");
+                return;
+            }
+            mostrarAviso("Pedido preparado. Podés conectarlo a tu sistema de ventas.");
+        });
+
+        document.getElementById("botonFavoritos").addEventListener("click", () => {
+            if (!favoritos.length) {
+                mostrarAviso("Todavía no tenés favoritos");
+                return;
+            }
+            aplicarFiltro("todos");
+            busquedaActual = "";
+            document.getElementById("entradaBusqueda").value = "";
+            mostrarAviso(`Tenés ${favoritos.length} producto${favoritos.length === 1 ? "" : "s"} favorito${favoritos.length === 1 ? "" : "s"}`);
+        });
+
+        // Modal
+        document.getElementById("cerrarModal").addEventListener("click", cerrarModal);
+        document.getElementById("modalProducto").addEventListener("click", evento => {
+            if (evento.target.id === "modalProducto") cerrarModal();
+        });
+        document.getElementById("modalAgregar").addEventListener("click", () => {
+            if (productoModalActual) {
+                agregarAlCarrito(productoModalActual);
+                cerrarModal();
+            }
+        });
+
+        // Newsletter
+        document.getElementById("formularioNewsletter").addEventListener("submit", evento => {
+            evento.preventDefault();
+            const correo = document.getElementById("correoNewsletter");
+            if (correo.value) {
+                mostrarAviso("¡Gracias! Te suscribiste correctamente.");
+                correo.value = "";
+            }
+        });
+
+        // Carrusel principal
+        const diapositivas = document.querySelectorAll(".diapositiva");
+        const indicadores = document.getElementById("indicadores");
+        let diapositivaActual = 0;
+
+        diapositivas.forEach((_, indice) => {
+            const punto = document.createElement("button");
+            punto.className = "indicador";
+            punto.addEventListener("click", () => mostrarDiapositiva(indice));
+            indicadores.appendChild(punto);
+        });
+
+        function mostrarDiapositiva(indice) {
+            diapositivaActual = (indice + diapositivas.length) % diapositivas.length;
+            diapositivas.forEach((diapositiva, i) => diapositiva.classList.toggle("activa", i === diapositivaActual));
+            document.querySelectorAll(".indicador").forEach((punto, i) => punto.classList.toggle("activo", i === diapositivaActual));
+        }
+
+        document.getElementById("siguiente").addEventListener("click", () => mostrarDiapositiva(diapositivaActual + 1));
+        document.getElementById("anterior").addEventListener("click", () => mostrarDiapositiva(diapositivaActual - 1));
+        setInterval(() => mostrarDiapositiva(diapositivaActual + 1), 6000);
+        mostrarDiapositiva(0);
+
+        // Desplazamiento horizontal de más vendidos
+        document.getElementById("desplazarSiguiente").addEventListener("click", () => {
+            document.getElementById("listaMasVendidos").scrollBy({left: 330, behavior:"smooth"});
+        });
+        document.getElementById("desplazarAnterior").addEventListener("click", () => {
+            document.getElementById("listaMasVendidos").scrollBy({left: -330, behavior:"smooth"});
+        });
+
+        // Menú móvil
+        document.getElementById("botonMenuMovil").addEventListener("click", () => {
+            document.getElementById("navegacion").classList.toggle("movil-abierto");
+        });
+
+        // Escape para cerrar paneles
+        document.addEventListener("keydown", evento => {
+            if (evento.key === "Escape") {
+                cerrarCarrito();
+                cerrarModal();
+            }
+        });
+
+        // Inicio
+        renderProductos();
+        renderMasVendidos();
+        renderCarrito();
+        actualizarContadores();
+    </script>
+</body>
+</html>
