@@ -1,0 +1,13 @@
+/* productos.css - ajustes propios de la página de catálogo.
+   El diseño base (colores, tarjetas de producto, grillas) ya está en
+   inicio.css, que esta página también carga. Acá solo van retoques
+   específicos de esta sección. */
+
+.buscador-catalogo {
+    max-width: 320px;
+}
+
+.filtros-catalogo .filtro {
+    display: inline-flex;
+    align-items: center;
+}
